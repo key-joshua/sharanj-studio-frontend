@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+.footer-page {
+    background-color: $yellow;
+
+    .container {
+        background-color: $yellowActive;
+    }
+}    

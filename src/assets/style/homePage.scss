@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+.home-page {
+    background-color: $red;
+
+    .container {
+        background-color: $redActive
+    }
+}    

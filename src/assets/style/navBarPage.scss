@@ -1,0 +1,9 @@
+@import './colors.scss';
+
+.navBar-page {
+    background-color: $green;
+
+    .container {
+        background-color: $greenActive;
+    }
+}    
