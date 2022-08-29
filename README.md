@@ -1,14 +1,14 @@
-# SHARANJ STUDIO FRONTEND CHALLEGE
+# SHARANJ STUDIO FRONTEND
 
-- This Frontend Challenge.
+- This Is Sharanj Studio Frontend.
 
 #### This is the Hosted link of the sharanj studio frontend [Access Web Page Direct]
 
-https://sheranj-studio-frontend.netlify.app/
+https://sharanj-studio-frontend.netlify.app/
 
-#### This is the Github repository link of the sheranj studio frontend.
+#### This is the Github repository link of the Sharanj studio frontend.
 
-https://github.com/key-joshua/sheranj-studio-frontend
+https://github.com/key-joshua/sharanj-studio-frontend
 
 
 ## GETTING START WITH PROJECT

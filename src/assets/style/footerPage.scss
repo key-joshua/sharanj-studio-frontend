@@ -1,9 +1,80 @@
 @import './colors.scss';
+@import './BreakPoint.scss';
 
 .footer-page {
-    background-color: $yellow;
-
-    .container {
-        background-color: $yellowActive;
+    background-color: $gray;
+    width: 100%;
+    padding: 30px 30px 35px 50px;
+    @include xs {
+        padding: 30px 15px 15px 10px;
     }
+    .footer_flx_0 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        & img {
+            width: 20%;
+        }
+        .footer_flx_1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            @include md {
+                padding-left: 20px;
+            }
+            & label {
+                margin: 0px 0px 10px 20px;
+                font-size: 13px;
+                font-weight: 500;
+                color: $darkBlue;
+            }
+            .input_wrapper {
+                display: flex;
+                align-content: center;
+                & input {
+                    padding: 15px 50px 15px 60px;
+                    border: 2px solid $darkBlue;
+                    border-radius: 15px;
+                    outline: none;
+                    @include md {
+                        padding: 10px 50px 10px 40px;
+                    }
+                    @include sm {
+                        padding: 5px 25px 5px 20px;
+                    }
+                    @include xs {
+                        padding:  2.5px 0px 2.5px 30px;
+                        width: 135px;
+                    }
+                }
+                .envelop {
+                    background-color: #350079;
+                    color: $white;
+                    width: 35px;
+                    height: 35px;
+                    padding: 8px;
+                    border-radius: 10px;
+                    margin: 5px 0px 0px 5px;
+                }
+            }
+        }
+    }
+    .footer_flx_2 {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        div:first-child p{
+            padding: 5px;
+        }
+        & div:last-child .logos {
+            max-width: 150px;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            @include xs {
+                height: 50%;
+            }
+        }
+    }
+
 }    

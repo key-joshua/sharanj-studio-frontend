@@ -1,19 +1,26 @@
-@import './assets/style/homePage.scss';
+// @import './assets/style/homePage.scss';
 @import './assets/style/footerPage.scss';
 @import './assets/style/navBarPage.scss';
+@import './assets/style/homePage.scss';
 
 body, html {
   margin: 0%;
   padding: 0%;
   height: 100%;
+  width: 100%;
   color: $black;
   font-style: normal;
-  background: $backgrounds;
-  font-family: 'Poppins', sans-serif;
+  background: $backgroundColor;
 
   zoom: 0.10;
   zoom: 100%;
   -moz-transform: scale(0.10, 0.10);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 @media(max-width: 600px) { 
