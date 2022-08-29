@@ -1,9 +1,65 @@
 @import './colors.scss';
+@import './BreakPoint.scss';
 
-.navBar-page {
-    background-color: $green;
+.navBar_page {
+    background-color: $backgroundColor;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 5%;
+    .logo {
+        max-width: 150px;
+    }
+    .links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-self: end;
+        align-self: center;
+        transition: 2s all ease-in-out;
+        @include md {
+            background: $menuColor;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 50%;
+            z-index: 1;
+            display: none;
+        }
+        .link {
+            text-transform: capitalize;
+            margin: 10px;
+            text-align: center;
+            font-weight: 500;
+            text-decoration: none;
+            color: $black;
+            @include md {
+                color: $white;
+            }
+        }
 
-    .container {
-        background-color: $greenActive;
+        .active_link {
+            color: $red;
+        }
+
+    }
+
+    .menu {
+        width: 30px;
+        position: absolute;
+        top: 35px;
+        right: 40px;
+        display: none;
+        cursor: pointer;
+        @include md {
+            display: block;
+        }
     }
 }    

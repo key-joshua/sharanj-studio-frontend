@@ -1,9 +1,426 @@
 @import './colors.scss';
+@import './BreakPoint.scss';
 
-.home-page {
-    background-color: $red;
+@mixin flex($valiable) {
+    border: $valiable;
+    padding: 50px 10px 10px 90px;
+    border-right: none;
+    width: 350px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+
+@mixin allbtn($measurement, $color, $margin) {
+    max-width: $measurement;
+    margin: $margin;
+    font-weight: 400;
+    font-size: 22px;
+    cursor: pointer;
+    color: $color;
+}
+
+.home_container {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    .home-page {
+        background-color: $backgroundColor;
+        padding: 0px 3%;
+        .title {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 70px;
+            line-height: 110px;
+            letter-spacing: 0.5rem;
+            @include lg {
+                font-size: 50px;
+                line-height: 70px;
+            }
+            @include md {
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 20px;
+            }
+            @include xs {
+                font-size: 15px;
+                line-height: 23px;
+            }
+            span {
+                color: $spanColor;      
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            @include md {
+                grid-template-columns: 1fr;
+            }
+            .main {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                p {
+                    line-height: 2rem;
+                    text-transform: uppercase;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 600;
+                    @include md {
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                button {
+                    width: 200px;
+                    padding: 20px;
+                    border-radius:30px;
+                    cursor: pointer;
+                    color: $white;
+                    background-color: $darkBlue;
+                    outline: none;
+                    border: none;
+                    @include md {
+                        margin: auto;
+                        margin-bottom: 70px;
+                    }
+                }
+            }
+
+            & img{
+                width: 400px;
+                position: relative;
+                top: -60px;
+                justify-self: center;
+                @include sm {
+                    width: 80%;
+                }
+
+            }
+        }
+    }
+
+    .video_background {
+        width: 100%;
+        height: 665px;
+        background-color: $darkBlue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .video {
+            object-fit: cover;
+            width:94%;
+            height: 85%;
+        }   
+    }
+
+
+    .title_1 {
+        padding: 5%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        @include lg {
+            text-align: center;
+        }
+        @include sm {
+            font-size: 30px;
+            text-align: left;
+        }
+    }
+    .contain {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+
+        .flex_1, .flex_2, .flex_3 {
+            @include flex(1px solid $gray);
+            @include sm {
+                width: 100%;
+                justify-self: flex-start;
+                padding: 10px;
+            }
+            .rotation {
+            width: 80px;
+            height: 390px;
+            background-color: $white;
+            position: absolute;
+            top: 3px;
+            right: -1px;
+            box-shadow: 17px 0px 10px -7px rgba(0, 0, 0, 0.50);
+            border-radius: 50%;
+            z-index: -1;
+            @include sm {
+                display: none;
+            }
+            &::before{
+                content: '';
+                width: 120px;
+                height: 120px;
+                background-color: $white;
+                position: absolute;
+                top: 30%;
+                right: -55px;
+                border-bottom-left-radius: 700px;
+                border-right: 20px solid $darkBlue;
+                border-top: 20px solid $darkBlue;
+                transform: rotate(45deg);
+                z-index: 1;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: -0.5%;
+                left: 47px;
+                width: 30px;
+                height: 395px;
+                background-color: $white;
+                z-index: 2;
+                border: none;
+            }
+        }
+        p:first-child{
+            padding-bottom: 30px;
+            font-size: 40px;
+            color: $darkBlue;
+            font-family: 'Nanum Pen Script', cursive;
+            }
+        }
+        p:last-child {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+        .flex_2 {
+            border-left: none;
+        }
+        .flex_3 {
+            @include flex(none);
+            @include sm {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+    }
+
+    .btn {
+        border-bottom: 1.5px solid $darkBlue;
+        @include allbtn(380px, $darkBlue, 0 auto);
+        @include xs {
+            @include allbtn(90%, $darkBlue,0 auto );
+            font-size: 17px;
+        }
+
+    }
+
+    .cards_container {
+        width: 100%;
+        background-color: $darkBlue;
+        padding: 10px 5%;
+        margin-top: 100px;
+        .title_2 {
+            padding: 50px 0;
+            color: $white;
+            font-weight: 700;
+            font-size: 50px;
+            @include lg {
+                text-align: center;
+            }
+            @include sm {
+                font-size: 30px;
+            }
+            @include xs {
+                font-size: 20px;
+            }
+        }
+        .grid_container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .grid_card {
+                background-color: $white;
+                width: 370.39px;
+                height: 445.24px;
+                margin: 0px 15px 30px 0px;
+            }
+        }
+        .btn_1 {
+            @include allbtn(500px, $white, 20px auto);
+            @include sm {
+                font-size: 30px;
+                text-align: center;
+                max-width: 100%;
+                padding: 0px;
+            }
+            .underline {
+                border-bottom: 1px solid $white;
+            }
+        }
+    }
 
     .container {
-        background-color: $redActive
+        max-width: 95%;
+        margin: 50px auto;
+        .title_3 {
+            font-weight: 700;
+            font-size: 50px;
+            text-transform: uppercase;
+            margin: 30px 0px;
+            @include lg {
+                text-align: center;
+                font-size: 40px;
+            }
+            @include xs {
+                font-size: 20px;
+            }
+        }
+        .text {
+            margin-bottom: 50px;
+            font-size: 30px;
+            @include xs {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .flx_c {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .flx_1{
+                flex-basis: 25%;
+                @include md {
+                    flex-basis: 50%;
+                    padding: 10px;
+                }
+                @include xs{
+                    flex-basis: 100%;
+                }
+                p:first-child{
+                    font-weight: bold;
+                    font-size: 25px;
+                    margin: 30px 0px;
+                }
+                & p:last-child {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+            }
+            .flx_2{
+                flex-basis: 25%;
+                @include md {
+                    flex-basis: 50%;
+                    padding: 10px;
+                }
+                @include xs {
+                    flex-basis: 100%;
+                }
+                p:first-child{
+                    font-weight: bold;
+                    font-size: 25px;
+                    margin: 30px 0px;
+                }
+                & p:last-child {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+
+            }
+
+            .flx_3 {
+                width: 35%;
+                background-color: $gray;
+                border-radius: 20px;
+                @include md {
+                    flex-basis: 100%;
+                    margin: 20px 0px;
+                }
+                & p {
+                    padding: 30px;
+                    color: $darkBlue;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+                & img {
+                    width: 90%;
+                    height: 280px;
+                    margin: 5%;
+                }
+            }
+
+        }
+
+        .flex_c {
+            flex-direction: row-reverse;
+            margin: 50px 0px;
+            text-align: right;
+            .flx_1, .flx_2 {
+
+            }
+        }
     }
-}    
+
+    .section {
+        background-color: $darkBlue;
+        color: $white;
+        & h1 {
+            text-align: center;
+            padding: 50px 0px 5px 0px;
+            font-size: 45px;
+            @include xs {
+                font-size: 30px;
+                padding: 20px;
+            }
+        }
+        .tittle {
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+            @include xs {
+                font-size: 20px;
+            }
+        }
+        & button {
+            width: 200px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius:30px;
+            cursor: pointer;
+            color: $darkBlue;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: $white;
+            outline: none;
+            border: none;
+            display: grid;
+            place-items: center;
+        }
+        .flxContainer {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 40px;
+            & img {
+                @include xs {
+                    width: 70%;
+                }
+            }
+
+            & p {
+                text-align: center;
+                font-family: 'Nanum Pen Script', cursive;
+                font-size: 25px;
+                @include xs {
+                    font-size: 17px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
